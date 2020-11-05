@@ -28,13 +28,18 @@ function wantSymbols() {
   var userInput = prompt("Do you wish to include symbols? Y/N: ");
   userInput = userInput.toLowerCase();
   if (userInput === 'y' || userInput === 'n') {
-    return true
+    if (userInput === 'y') {
+      passwordArr.push(symbols)
+    } else {
+      null
+    }
+    return passwordArr;
   } else {
     alert("Invalid input. please enter 'y' or 'n' ")
     wantSymbols();
   }
 }
-// Numbers          GO BASED OFF OF THIS!!!!
+// Numbers          GO BASED OFF OF THIS!!!! COPY TO OTHER CRITERIA FUNCTIONS
 function wantNumbers() {
   var userInput = prompt("Do you wish to include numbers? Y/N: ");
   userInput = userInput.toLowerCase();
@@ -50,23 +55,35 @@ function wantNumbers() {
     wantNumbers();
   }
 }
+
 // Upper Case Letters 
 function wantUpper() {
-  var userInput = prompt("Do yo wish to include upper case letters? Y/N: ")
+  var userInput = prompt("Do you wish to include upper-case lettters? Y/N: ");
   userInput = userInput.toLowerCase();
   if (userInput === 'y' || userInput === 'n') {
-    return true
+    if (userInput === 'y') {
+      passwordArr.push(upperCaseLetters)
+    } else {
+      null
+    }
+    return passwordArr;
   } else {
     alert("Invalid input. please enter 'y' or 'n' ")
     wantUpper();
   }
 }
+
 // Lower case Letters
 function wantLower() {
-  var userInput = prompt("Do you wish to include symbols? Y/N: ");
+  var userInput = prompt("Do you wish to include lower-case letters? Y/N: ");
   userInput = userInput.toLowerCase();
   if (userInput === 'y' || userInput === 'n') {
-    return true
+    if (userInput === 'y') {
+      passwordArr.push(lowerCaseLetters)
+    } else {
+      null
+    }
+    return passwordArr;
   } else {
     alert("Invalid input. please enter 'y' or 'n' ")
     wantLower();
@@ -78,7 +95,7 @@ function wantLower() {
 function getLength() {
   var userInput = parseInt(prompt("choose a length of at least 8 characters and no more than 128 characters"));
   if (userInput >= 8 && userInput <= 128) {
-    pwLength = userInput;
+    var pwLength = userInput;
     return pwLength;
   } else {
     alert("Invalid input. Length must be beween 8 and 128 characters.")
@@ -88,38 +105,12 @@ function getLength() {
 
 function getCriteria() {
   wantLower();
-  if (wantLower == true) {
-    if (userInput === 'y') {
-      passwordArr.push(lowerCaseLetters)
-    } else {
-      break;
-    }
-  }
 
   wantUpper();
-  if (wantUpper == true) {
-    if (userInput === 'y') {
-      passwordArr.push(upperCaseLetters);
-    } else {
-      break;
-    }
-  }
 
   wantNumbers();
-  if (wantNumbers == true) {
-    if (userInput === 'y') {
-      passwordArr.push(numbers);
-    } else {
-      break;
-    }
-  }
 
   wantSymbols();
-  if (wantSymbols == true) {
-    if (userInput == 'y') {
-      passwordArr.push(symbols);
-    }
-  }
 
   getLength();
 }
