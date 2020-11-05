@@ -20,11 +20,66 @@ var numbers = "1234567890";
 var upperCaseLetters = "ABCDEFGHIJKLMNOPRSTUVWXYZ";
 var lowerCaseLetters = "abcdefghijklmnopqrstuvwxyz";
 
-promptQuestions(){
-  wantSymbols = prompt("Do you wish to include symbols?")
-  wantNumbers = prompt("Do you wish to include numbers?")
-  wantUpper = prompt("Do yo wish to include upper case letters?")
-  wantLower = prompt("Do you wish to include lower case letters? ")
+// below 4 functions ask user for the desired characters to be included in their password and validates input.
+
+// Symbols
+function wantSymbols(){
+  var userInput = prompt("Do you wish to include symbols? Y/N: ");
+  userInput = userInput.toLowerCase;
+  if(userInput === 'y' || userInput === 'n'){
+    return true
+  }else{
+    return false
+  }
+}
+// Numbers
+function wantNumbers(){
+  var userInput = prompt("Do you wish to include numbers? Y/N: ");
+  userInput = userInput.toLowerCase;
+  if(userInput === 'y' || userInput === 'n'){
+    return true
+  }else{
+    return false
+  }
+}
+// Upper Case Letters 
+function wantUpper(){
+  var userInput = prompt("Do yo wish to include upper case letters? Y/N: ")
+  userInput = userInput.toLowerCase;
+  if(userInput === 'y' || userInput === 'n'){
+    return true
+  }else{
+    return false
+  }
+}
+// Lower case Letters
+function wantLower(){
+  var userInput = prompt("Do you wish to include symbols? Y/N: ");
+  userInput = userInput.toLowerCase;
+  if(userInput === 'y' || userInput === 'n'){
+    return true
+  }else{
+    return false
+  }
+}
+
+// function that asks the user for their desired password length,
+//validates then saves inside the variable pwLength. 
+function getLength(){
+  var userInput = parseInt(prompt("choose a length of at least 8 characters and no more than 128 characters"));
+  if(userInput >= 8 && userInput <=128){
+    pwLength = userInput;
+    return pwLength;
+  }else{
+    alert("Invalid input. Length must be beween 8 and 128 characters.")
+    getLength();
+  }
+}
+
+//The big function that's going to use the above 'helper' functions to properly generate a password per user's preferences. 
+function generatePassword(){
+  //prompt user for criteria
+  //validate their inputs
 }
 
 // GIVEN I need a new, secure password //
