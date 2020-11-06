@@ -116,18 +116,22 @@ function getCriteria() {
   getLength();
 }
 
+function randomPassword (String){
+  return String[Math.floor(Math.random() * String.length)]
+}
+
 //The big function that's going to use the above 'helper' functions to properly generate a password per user's preferences. 
 function generatePassword() {
-  //prompt user for criteria
-  wantLower();
-  wantUpper();
-  wantNumbers();
-  wantSymbols();
-  getLength();
+  //prompt user for criteria and length.
 
-  for(i=0; i<pwLength+1; i++){
-    
+  var criteriaString = wantLower() + wantUpper() + wantNumbers() + wantSymbols();
+  var pwCount = getLength();
+
+  for(i=0; i<pwCount+1; i++){
+    password += randomPassword(criteriaString)
   }
+
+  return password
 
   //validate their inputs
   //call all funcitons
