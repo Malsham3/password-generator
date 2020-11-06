@@ -104,37 +104,27 @@ function getLength() {
   }
 }
 
-function getCriteria() {
-  wantLower();
-
-  wantUpper();
-
-  wantNumbers();
-
-  wantSymbols();
-
-  getLength();
-}
-
+//helper function that generates a random set of characters from a given string/ string array.
 function randomPassword(String){
   return String[Math.floor(Math.random() * String.length)]
 }
 
 //The big function that's going to use the above 'helper' functions to properly generate a password per user's preferences. 
 function generatePassword() {
-
+  let password = "";
+  
   //saving an array of desired characters as a string array
-  var criteriaString = wantLower() + wantUpper() + wantNumbers() + wantSymbols();
+  var criteriaString = wantLower() + wantSymbols() + wantUpper() + wantNumbers();
 
   // saving desired password length (integer)
   var pwCount = getLength();
 
   //for loop that'll randomly pick characters from the criteria string array length-of-password times.
-  for(i=0; i<pwCount+1; i++){
+  for(i=0; i<pwCount; i++){
     password += randomPassword(criteriaString)
   }
   // returns final generated password.
-  return password
+  return password;
 }
 
 // GIVEN I need a new, secure password //
