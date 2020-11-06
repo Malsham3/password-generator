@@ -1,6 +1,5 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
-var passwordArr = [];
 
 
 // Write password to the #password input
@@ -21,6 +20,8 @@ var numbers = "1234567890";
 var upperCaseLetters = "ABCDEFGHIJKLMNOPRSTUVWXYZ";
 var lowerCaseLetters = "abcdefghijklmnopqrstuvwxyz";
 
+var emptyPassword = "";
+
 // below 4 functions ask user for the desired characters to be included in their password and validates input.
 
 // Symbols
@@ -29,27 +30,27 @@ function wantSymbols() {
   userInput = userInput.toLowerCase();
   if (userInput === 'y' || userInput === 'n') {
     if (userInput === 'y') {
-      passwordArr.push(symbols)
+      emptyPassword += symbols
     } else {
       null
     }
-    return passwordArr;
+    return emptyPassword;
   } else {
     alert("Invalid input. please enter 'y' or 'n' ")
     wantSymbols();
   }
 }
-// Numbers          GO BASED OFF OF THIS!!!! COPY TO OTHER CRITERIA FUNCTIONS
+// Numbers 
 function wantNumbers() {
   var userInput = prompt("Do you wish to include numbers? Y/N: ");
   userInput = userInput.toLowerCase();
   if (userInput === 'y' || userInput === 'n') {
     if (userInput === 'y') {
-      passwordArr.push(numbers)
+      emptyPassword += numbers
     } else {
       null
     }
-    return passwordArr;
+    return emptyPassword;
   } else {
     alert("Invalid input. please enter 'y' or 'n' ")
     wantNumbers();
@@ -62,11 +63,11 @@ function wantUpper() {
   userInput = userInput.toLowerCase();
   if (userInput === 'y' || userInput === 'n') {
     if (userInput === 'y') {
-      passwordArr.push(upperCaseLetters)
+      emptyPassword += upperCaseLetters;
     } else {
       null
     }
-    return passwordArr;
+    return emptyPassword;
   } else {
     alert("Invalid input. please enter 'y' or 'n' ")
     wantUpper();
@@ -79,11 +80,11 @@ function wantLower() {
   userInput = userInput.toLowerCase();
   if (userInput === 'y' || userInput === 'n') {
     if (userInput === 'y') {
-      passwordArr.push(lowerCaseLetters)
+      emptyPassword += lowerCaseLetters;
     } else {
       null
     }
-    return passwordArr;
+    return emptyPassword;
   } else {
     alert("Invalid input. please enter 'y' or 'n' ")
     wantLower();
@@ -123,6 +124,10 @@ function generatePassword() {
   wantNumbers();
   wantSymbols();
   getLength();
+
+  for(i=0; i<pwLength+1; i++){
+    
+  }
 
   //validate their inputs
   //call all funcitons
