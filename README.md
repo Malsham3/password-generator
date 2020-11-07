@@ -11,7 +11,8 @@ wantSymbols() function procedure is described below:
     - If the answer is yes, a string of all symbols previously declared inside of a variable named symbols is added to a variable emptyPassword with an empty string
     - emptyPassword is then returned at the end of the function
 
-    Note: wantNumbers(), wantUpper(), wantLower(), all follow the same procedure. After all the functions are called, we then have emptyPassword filled with characters type that user wishes to include.
+    Note: wantNumbers(), wantUpper(), wantLower(), all follow the same procedure. 
+    After all the functions are called, we then have emptyPassword filled with characters type that user wishes to include.
 
 getLength() function asks the user for their desired password length, validates then saves the number inside of global variable pwLength and returns it after proper validation. 
 
@@ -25,3 +26,8 @@ generatePassword() is the big executing function that generates our password by 
     - Using a for-loop, randomPassword() randomly picks a character from criteriaString and adds it to the empty string variable password. 
     - The for-loop is executed just as many times as the character count of user’s desired password length.
     - Finally, the function returns password which contains the password as a string. 
+
+
+    GitHub link: https://github.com/Malsham3/password-generator
+    Deployed application link: https://malsham3.github.io/password-generator/
+    Screenshot: 
