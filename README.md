@@ -30,4 +30,5 @@ generatePassword() is the big executing function that generates our password by 
 
     GitHub link: https://github.com/Malsham3/password-generator
     Deployed application link: https://malsham3.github.io/password-generator/
-    Screenshot: 
+    Screenshot below shows an example of a generated 12 character password that includes all character types (symbols, numbers, uppercase and lowercase letters)
+    ![Alt Text](assets/password-generator-screenshot.png)
